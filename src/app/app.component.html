@@ -15,15 +15,13 @@
   <div style="display:flex; justify-content: space-around;">
     <div style="display: flex; flex-direction: column; margin: 40px;">
       <span><u>People</u></span>
-      <ul *ngFor="let person of people" style="list-style: none; padding: 0;">
+      <ul *ngFor="let person of peopleCopy" style="list-style: none; padding: 0;">
         <li>{{person}}</li>
       </ul>
     </div>
     <div style="display: flex; flex-direction: column; margin: 40px;">
-      <span><u>Groups</u></span>
-      <ul *ngFor="let person of shuffledPeople" style="list-style: none; padding: 0;">
-        <li >{{person}}</li>
-      </ul>
+      <span><u>New groups</u></span>
+      
     </div>
   </div>
   
