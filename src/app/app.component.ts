@@ -46,10 +46,8 @@ export class AppComponent implements OnInit{
     this.peopleShuffle = this.shuffleArray(this.people);
     // Separate into a given number of groups
     this.newGroups = this.separateIntoGroups(this.peopleShuffle, this.numberOfGroups);
-
     console.log(this.newGroups);
   }
-
 
   ////////////////////////////
   /// Support functions ///
@@ -63,15 +61,17 @@ export class AppComponent implements OnInit{
 
   separateIntoGroups(elements: any[], numOfGroups: number): any[] {
     if (!numOfGroups) return this.peopleCopy;
-    let newElements: any[] = [];
+    let newElements: any = {};
     let copyElements = [...elements];
     let ratio = Math.abs(numOfGroups > copyElements.length ? 1 : copyElements.length/numOfGroups);
     if (numOfGroups > copyElements.length) numOfGroups = copyElements.length;
     //@ts-ignore
     for (let i = 0; i < numOfGroups; i++) newElements[`Group N° ${i+1}`] = copyElements.splice(0,ratio);
+    //@ts-ignore
     for (let i = 0; i < copyElements.length; i++) Object.values(newElements)[i].push(copyElements[i]);
     return newElements;
   }
+
   showPeople() {
     this.show = !this.show;
   }

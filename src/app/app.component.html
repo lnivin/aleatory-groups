@@ -21,8 +21,14 @@
     </div>
     <div style="display: flex; flex-direction: column; margin: 40px;">
       <span><u>New groups</u></span>
-      
+      <div *ngFor="let item of newGroups | keyvalue">
+          {{item.key}}
+          <div *ngFor="let i of item.value">
+              <ul>
+                <li>{{i}}</li>
+              </ul>
+          </div>
+      </div>
     </div>
   </div>
-  
 </div>
